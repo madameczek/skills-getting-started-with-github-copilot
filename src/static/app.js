@@ -58,8 +58,8 @@ async function fetchActivities() {
         <p>${details.description}</p>
         <p><strong>Schedule:</strong> ${details.schedule}</p>
         <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
-        <div style="margin-top: 15px; background-color: #e3f2fd; padding: 15px; border-radius: 5px; border: 1px solid #ddd;" class="participants-section">
-          <strong>Participants:</strong>
+        <div class="participants-section">
+          <strong>Current Participants:</strong>
           ${participantsList}
         </div>
       `;

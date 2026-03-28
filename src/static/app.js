@@ -44,13 +44,13 @@ async function fetchActivities() {
 
       let participantsList = details.participants.length > 0 
         ? `<div style="margin-top: 10px;">${details.participants.map(email => `
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px; background-color: #e3f2fd; margin-bottom: 5px; border-radius: 3px;">
-              <span>${email}</span>
-              <button type="button" onclick="deleteParticipant('${name}', '${email}')" style="background-color: #c62828; padding: 4px 8px; font-size: 12px; cursor: pointer;">
-                ✕ Remove
-              </button>
-            </div>
-          `).join('')}</div>`
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px; margin-bottom: 5px; border-radius: 3px;">
+                <span>${email}</span>
+                <button type="button" onclick="deleteParticipant('${name}', '${email}')" style="background-color: #c62828; padding: 4px 8px; font-size: 12px; cursor: pointer;">
+                  ✕ Remove
+                </button>
+              </div>
+            `).join('')}</div>`
         : '<p style="margin-top: 10px; font-style: italic; color: #666;">No participants yet</p>';
 
       activityCard.innerHTML = `
@@ -58,7 +58,7 @@ async function fetchActivities() {
         <p>${details.description}</p>
         <p><strong>Schedule:</strong> ${details.schedule}</p>
         <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
-        <div style="margin-top: 15px;" class="participants-section">
+        <div style="margin-top: 15px; background-color: #e3f2fd; padding: 15px; border-radius: 5px;" class="participants-section">
           <strong>Current Participants:</strong>
           ${participantsList}
         </div>
